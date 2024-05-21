@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1>Mozilla is cool</h1>
-    <img src="images/firefox-icon.png" alt="The Firefox logo: a flaming fox surrounding the Earth.">
-    <p>At Mozilla, we’re a global community of</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Cards</title>
+</head>
+<body>
+    <script>
+        // Requesting personal data from the user
+        var name = prompt('Input name', '');
+        var position = prompt('Input position', '');
+        var phone = prompt('Input phone', '');
 
-    <ul> <!-- changed to list in the tutorial -->
-      <li>technologists</li>
-      <li>thinkers</li>
-      <li>builders</li>
-    </ul>
+        // Creating a single visit card template
+        var visitcard = '<table width="100%" border="0">'
+            + '<tr>'
+            + '<td align="center" valign="center">'
+            + '<img src="images/unity.png" alt="Logo" width=50px high=50px>'
+            + '</td>'
+            + '<td align="center">'
+            + '<b>' + name + '</b><br>'
+            + '<i>' + position + '</i><br>'
+            + '<font color="blue">' + phone + '</font>'
+            + '</td>'
+            + '</tr>'
+            + '</table>';
 
-    <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
-
-    <p>Read the <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a> to learn even more about the values and principles that guide the pursuit of our mission.</p>
-    <button>Change user</button>
-    <script src="scripts/main.js"></script>
-  </body>
+        // Generating a 12x3 table of visit cards
+        document.write('<table width="100%" border="0" align="center">');
+        for (var y = 0; y < 12; y++) {
+            document.write('<tr>');
+            for (var x = 0; x < 3; x++) {
+                document.write('<td align="center" style="border-style: dashed; border-width: thin;">');
+                document.write(visitcard);
+                document.write('</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+</body>
 </html>
